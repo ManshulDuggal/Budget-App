@@ -360,10 +360,6 @@ var Controller = (function (BgtCntrl, InterFaceCntrl) {
         totalInc: 0,
         totalExp: 0,
         percentage: -1,
-<<<<<<< HEAD
-=======
-      
->>>>>>> f1f31d1 (initial)
       });
       AllEventListeners();
 
