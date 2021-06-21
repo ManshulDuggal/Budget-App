@@ -263,7 +263,7 @@ var InterFaceController = (function () {
       ];
 
       document.querySelector(DOMstrings.monthLable).textContent =
-        monthArray[month] + "" + year;
+        monthArray[month] + " " + year;
     },
 
     getDOMstrings: function () {
