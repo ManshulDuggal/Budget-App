@@ -41,7 +41,7 @@ body {
   background: url(./back.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center ;
+  background-position: center;
 
   position: relative;
 }
@@ -53,13 +53,12 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
- 
 }
 
-.icon-add-big{
-display: flex;
-justify-content: center;
-align-items: center;
+.icon-add-big {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
 }
 .budget__title {
@@ -326,9 +325,97 @@ h2 {
   font-weight: 900;
 }
 
-
 .icon-cross-red,
-.icon-cross-green
-{
-width:1rem;
+.icon-cross-green {
+  width: 1rem;
+}
+
+/* Media queries */
+
+@media all and (max-width: 450px) {
+  .budget__expenses--value,
+  .budget__income--value,
+  .budget__income--text,
+  .budget__expenses--text,
+  .budget__expenses--percentage,
+  .budget__expenses--percentage,
+  .budget__value,
+  .budget__title {
+    font-size: 0.6rem;
+  }
+
+  .container {
+    width: 10%;
+    margin: 10px auto;
+  }
+
+  .income__title,
+  .income {
+    position: absolute;
+    width: 45%;
+    top: 45%;
+    left: 5%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+
+    font-size: 0.7rem;
+  }
+
+  .expenses {
+    position: absolute;
+    width: 45%;
+    top: 45%;
+    left: 52%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+
+    font-size: 0.7rem;
+  }
+
+  body {
+    overflow-y: scroll;
+  }
+  .top {
+    height: 30vh;
+  }
+  .expenses__title,
+  .icome__title {
+    font-size: 0.8rem;
+  }
+  .icon-add-big {
+    width: 40%;
+  }
+
+  .add__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .add__type {
+    padding: 0.2rem;
+    width: 20%;
+    border-radius: 10%;
+    
+  }
+
+  .add__description {
+    width: 40%;
+    padding: 0.6rem;
+  
+  }
+  .add__value {
+    width: 20%;
+    padding: 0.6rem;
+  }
+.budget__expenses,
+  .budget__income{
+    padding: 0.6rem;
+  }
+
+
 }
