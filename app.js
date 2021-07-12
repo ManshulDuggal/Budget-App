@@ -147,6 +147,7 @@ var InterFaceController = (function () {
     percentageLabel2: ".budget__income--percentage",
     monthLable: ".budget__title--month",
     parentContainer: ".container",
+    itemPercentage: ".item__percentage",
   };
 
   //method
@@ -176,10 +177,9 @@ var InterFaceController = (function () {
         element = DOMstrings.expContainer;
 
         html =
-          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><img src="./logo/cross-small-red.png" class="icon-cross-red" alt="remove-exp"></button></div></div></div>';
+          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div> <div class="item__delete"><button class="item__delete--btn"><img src="./logo/cross-small-red.png" class="icon-cross-red" alt="remove-exp"></button></div></div></div>';
       }
-
-      // <div class="item__percentage"></div>
+      //<div class="item__percentage">21%</div>
       newHTML = html.replace("%id%", obj.id);
       newHTML = newHTML.replace("%description%", obj.description);
       newHTML = newHTML.replace("%value%", obj.value);
@@ -241,6 +241,24 @@ var InterFaceController = (function () {
         document.querySelector(DOMstrings.percentageLabel).textContent = "--";
         document.querySelector(DOMstrings.percentageLabel2).textContent = "+";
       }
+    },
+
+    displayItemPercentages: function (percentage) {
+      var fields = document.querySelector(DOMstrings.itemPercentage);
+
+      var nodeListForEach = function (list, callback) {
+        for (var i = 0; i < list.length; i++) {
+          callback(list[i], i);
+        }
+      };
+
+      nodeListForEach(fields, function (current, index) {
+        if (percentage[index] > 0) {
+          current.textContent = percentage[index] + "%";
+        } else {
+          current.textContent = "---";
+        }
+      });
     },
 
     getMonth: function () {
@@ -346,7 +364,8 @@ var Controller = (function (BgtCntrl, InterFaceCntrl) {
 
     //deleting item from the interface
     InterFaceController.deleteListItems(itemID);
-
+    //
+    InterFaceController.displayItemPercentages(percentage);
     //updating and displaying the new budget
     BudgetUpdate();
   };
