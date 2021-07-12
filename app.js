@@ -176,9 +176,10 @@ var InterFaceController = (function () {
         element = DOMstrings.expContainer;
 
         html =
-          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage"></div><div class="item__delete"><button class="item__delete--btn"><img src="./logo/cross-small-red.png" class="icon-cross-red" alt="remove-exp"></button></div></div></div>';
+          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><img src="./logo/cross-small-red.png" class="icon-cross-red" alt="remove-exp"></button></div></div></div>';
       }
 
+      // <div class="item__percentage"></div>
       newHTML = html.replace("%id%", obj.id);
       newHTML = newHTML.replace("%description%", obj.description);
       newHTML = newHTML.replace("%value%", obj.value);
