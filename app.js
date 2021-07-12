@@ -176,7 +176,7 @@ var InterFaceController = (function () {
         element = DOMstrings.expContainer;
 
         html =
-          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><img src="./logo/cross-small-red.png" class="icon-cross-red" alt="remove-exp"></button></div></div></div>';
+          '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage"></div><div class="item__delete"><button class="item__delete--btn"><img src="./logo/cross-small-red.png" class="icon-cross-red" alt="remove-exp"></button></div></div></div>';
       }
 
       newHTML = html.replace("%id%", obj.id);
@@ -233,8 +233,9 @@ var InterFaceController = (function () {
       if (obj.percentage > 0) {
         document.querySelector(DOMstrings.percentageLabel).textContent =
           obj.percentage + "%";
+
         document.querySelector(DOMstrings.percentageLabel2).textContent =
-          obj.percentage + "%";
+          obj.percentage - 100 + "%";
       } else {
         document.querySelector(DOMstrings.percentageLabel).textContent = "--";
         document.querySelector(DOMstrings.percentageLabel2).textContent = "+";
@@ -364,7 +365,6 @@ var Controller = (function (BgtCntrl, InterFaceCntrl) {
       AllEventListeners();
 
       //displaying the result on UI
-    
     },
   };
 })(Budget, InterFaceController);
