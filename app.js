@@ -236,7 +236,7 @@ var InterFaceController = (function () {
           obj.percentage + "%";
 
         document.querySelector(DOMstrings.percentageLabel2).textContent =
-          obj.percentage - 100 + "%";
+          100 - obj.percentage + "%";
       } else {
         document.querySelector(DOMstrings.percentageLabel).textContent = "--";
         document.querySelector(DOMstrings.percentageLabel2).textContent = "+";
